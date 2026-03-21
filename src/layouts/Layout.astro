@@ -35,12 +35,19 @@ const {
   :root {
     --bg: #f5f4f0;
     --text: #0e0e0e;
-    --muted: #999;
+    --muted: #555;
     --border: rgba(14, 14, 14, 0.1);
     --font-display: "Space Grotesk", system-ui, sans-serif;
     --font-body: "Space Grotesk", system-ui, sans-serif;
     --max-w: 1200px;
     --pad: clamp(1.5rem, 5vw, 4rem);
+  }
+
+  :root.dark {
+    --bg: #1a1a1a;
+    --text: #f0ede8;
+    --muted: #bbb;
+    --border: rgba(240, 237, 232, 0.1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
