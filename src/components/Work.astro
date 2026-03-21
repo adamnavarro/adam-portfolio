@@ -6,7 +6,11 @@ const projects = [
     industry: "Web3 · Blockchain",
     tags: ["Branding", "Landing Page", "UI/UX Design", "Marketing Materials", "Motion Design"],
     image: "https://framerusercontent.com/images/wd718ynnDuF2IjnLpFikQXB0R4c.png",
+<<<<<<< HEAD
     link: "/work/central",
+=======
+    link: "https://www.figma.com/proto/6y6YoCDa5TFW9JkWAZ31av/Sample-Works-2025?page-id=0%3A1&node-id=49-16603&viewport=506%2C145%2C0.16&t=ep4Ka7M0N0lak9C6-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=49%3A16603&show-proto-sidebar=1",
+>>>>>>> 56daf42056294b2452afec20f8a7b93095a6541e
   },
   {
     id: "02",
@@ -65,6 +69,7 @@ const projects = [
 
     <div class="projects">
       {projects.map((p) => (
+<<<<<<< HEAD
         <a
           href={p.link}
           target={p.link.startsWith('/') ? '_self' : '_blank'}
@@ -72,6 +77,9 @@ const projects = [
           class="project"
           data-reveal
         >
+=======
+        <a href={p.link} target="_blank" rel="noopener" class="project" data-reveal>
+>>>>>>> 56daf42056294b2452afec20f8a7b93095a6541e
           <div class="project-img-wrap">
             <img
               src={p.image}
