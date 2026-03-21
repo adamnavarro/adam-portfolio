@@ -1,0 +1,153 @@
+---
+---
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <p class="section-label">Contact</p>
+    <div class="contact-content">
+      <h2 class="contact-heading">
+        Let's get to<br />
+        <span class="light">know each other.</span>
+      </h2>
+      <div class="contact-right">
+        <p class="contact-sub">
+          Open to new projects, collaborations, and conversations.
+          Don't hesitate to reach out.
+        </p>
+        <a
+          href="mailto:navarro.adamadrian@gmail.com"
+          class="email-link"
+        >
+          navarro.adamadrian@gmail.com ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-name">© Adam Navarro 2026</p>
+    <div class="footer-links">
+      <a href="https://dribbble.com/adamnavarro" target="_blank" rel="noopener">Dribbble</a>
+      <a href="https://www.linkedin.com/in/navarroadamadrian/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://unsplash.com/@adamnavarro_" target="_blank" rel="noopener">Unsplash</a>
+      <a href="https://drive.google.com/file/d/1uA3yT5Jhe45K5HL0qflaO_gw8uBELWwQ/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .contact {
+    padding: 8rem var(--pad) 6rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+
+  .contact-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .contact-heading em {
+    font-style: normal;
+    font-weight: 300;
+  }
+
+  .contact-heading .light {
+    font-weight: 300;
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-sub {
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 380px;
+  }
+
+  .email-link {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    transition: border-color 0.2s, opacity 0.2s;
+  }
+
+  .email-link:hover {
+    border-color: var(--text);
+    opacity: 0.7;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem var(--pad);
+  }
+
+  .footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .footer-name {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    .contact-content { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  }
+</style>

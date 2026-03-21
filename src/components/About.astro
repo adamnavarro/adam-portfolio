@@ -1,0 +1,159 @@
+---
+---
+<section id="about" class="about">
+  <div class="about-inner">
+    <p class="section-label">About</p>
+    <div class="about-grid">
+      <h2 class="about-heading">
+        Design at the<br />
+        <span class="light">intersection</span><br />
+        of craft & code.
+      </h2>
+      <div class="about-body">
+        <p>
+          I'm Adam — a UI/UX Designer based in the Philippines with over 8 years
+          of experience turning complex problems into elegant, intuitive digital
+          experiences.
+        </p>
+        <p>
+          My background spans fintech, insurance, marketplaces, and Web3 —
+          giving me a rare ability to design for highly regulated, data-rich
+          environments without sacrificing beauty or usability.
+        </p>
+        <p>
+          I care deeply about the full picture: from user research and flows to
+          pixel-perfect UI and scalable design systems. With a foundation in
+          software development, I bridge design and engineering naturally.
+        </p>
+        <div class="expertise">
+          <div class="expertise-col">
+            <p class="expertise-label">Expertise</p>
+            <ul>
+              <li>Product Design</li>
+              <li>UX Research</li>
+              <li>Design Systems</li>
+              <li>Brand Identity</li>
+              <li>Motion Design</li>
+              <li>Prototyping</li>
+            </ul>
+          </div>
+          <div class="expertise-col">
+            <p class="expertise-label">Industries</p>
+            <ul>
+              <li>Web3 / Blockchain</li>
+              <li>Fintech</li>
+              <li>Payments</li>
+              <li>EdTech</li>
+              <li>E-commerce</li>
+            </ul>
+          </div>
+          <div class="expertise-col">
+            <p class="expertise-label">Tools</p>
+            <ul>
+              <li>Figma</li>
+              <li>After Effects</li>
+              <li>Jira / Notion</li>
+              <li>Claude</li>
+              <li>Cursor</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 8rem var(--pad);
+    border-top: 1px solid var(--border);
+  }
+
+  .about-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-heading {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4.5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    position: sticky;
+    top: 8rem;
+  }
+
+  .about-heading .light {
+    font-weight: 300;
+  }
+
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-body p {
+    font-size: clamp(0.92rem, 1.4vw, 1rem);
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  .expertise {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .expertise-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.85rem;
+  }
+
+  .expertise ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .expertise li {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-heading { position: static; }
+    .expertise { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .expertise { grid-template-columns: 1fr 1fr; }
+  }
+</style>
