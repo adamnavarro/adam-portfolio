@@ -1,0 +1,153 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+
+const project = {
+  title: "Studyabroad.com",
+  industry: "EdTech · Education",
+  tags: ["Branding", "Landing Page", "Marketing Materials"],
+  overview: "Studyabroad.com needed a modernized brand and user experience that could scale globally while building trust with students navigating one of the biggest decisions of their lives.",
+  sections: [
+    {
+      label: "Landing Page",
+      layout: "1-col",
+      images: [
+        { src: "/images/sa-landing.png", alt: "Studyabroad.com landing page hero" },
+      ]
+    },
+    {
+      label: "Visual Identity",
+      layout: "1-col",
+      images: [
+        { src: "/images/sa-visual-identity.png", alt: "Studyabroad.com visual identity and logo usage" },
+      ]
+    },
+    {
+      label: "Logo Concepts",
+      layout: "side-by-side",
+      images: [
+        { src: "/images/sa-logo-concepts.png", alt: "Studyabroad.com logo concepts and exploration" },
+        { src: "/images/sa-print-materials.png", alt: "Studyabroad.com print materials — business cards" },
+      ],
+      labels: ["Logo Concepts", "Print Materials"]
+    },
+    {
+      label: "Marketing Materials",
+      layout: "1-col",
+      images: [
+        { src: "/images/sa-marketing-materials.png", alt: "Studyabroad.com marketing materials — social cards and ads" },
+      ]
+    },
+  ],
+  prev: { title: "xSpend", slug: "xspend" },
+  next: { title: "GetX", slug: "getx" }
+};
+---
+
+<Layout title={`${project.title} — Adam Navarro`} description={project.overview}>
+  <Nav />
+  <main class="case-study">
+    <div class="container">
+      <a href="/#work" class="back-link">← Back to works</a>
+      <header class="project-header">
+        <div class="header-left">
+          <h1 class="project-title">{project.title}</h1>
+          <p class="project-industry">{project.industry}</p>
+        </div>
+        <div class="project-tags">
+          {project.tags.map(tag => <span class="tag">{tag}</span>)}
+        </div>
+      </header>
+      <div class="overview">
+        <p class="overview-label">Overview</p>
+        <p class="overview-text">{project.overview}</p>
+      </div>
+      <div class="divider"></div>
+      {project.sections.map(section => (
+        <section class="work-section">
+          {section.layout === 'side-by-side' ? (
+            <div class="side-by-side-grid">
+              {section.images.map((img, i) => (
+                <div class="side-col">
+                  <p class="section-label">{section.labels?.[i] ?? ''}</p>
+                  <div class="image-wrap">
+                    <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              <div class="section-header">
+                <p class="section-label">{section.label}</p>
+              </div>
+              <div class="images-grid">
+                {section.images.map(img => (
+                  <div class="image-wrap">
+                    <img src={img.src} alt={img.alt} loading="lazy" decoding="async" />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </section>
+      ))}
+      <nav class="project-nav">
+        <div class="project-nav-item">
+          {project.prev && (
+            <a href={`/work/${project.prev.slug}`} class="nav-project">
+              <span class="nav-direction">← Previous</span>
+              <span class="nav-title">{project.prev.title}</span>
+            </a>
+          )}
+        </div>
+        <div class="project-nav-item">
+          {project.next && (
+            <a href={`/work/${project.next.slug}`} class="nav-project">
+              <span class="nav-direction">Next →</span>
+              <span class="nav-title">{project.next.title}</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .case-study { padding-top: clamp(5rem, 12vh, 8rem); padding-bottom: 6rem; }
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad); }
+  .back-link { display: inline-block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 3rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--text); }
+  .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .project-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.5rem; }
+  .project-industry { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: flex-end; max-width: 50%; }
+  .tag { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 0.25rem 0.7rem; border-radius: 100px; white-space: nowrap; }
+  .overview { display: grid; grid-template-columns: 140px 1fr; gap: 2rem; margin-bottom: 3rem; align-items: start; }
+  .overview-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 0.2rem; }
+  .overview-text { font-size: clamp(0.95rem, 1.5vw, 1.05rem); line-height: 1.8; color: var(--muted); max-width: 680px; }
+  .divider { height: 1px; background: var(--border); margin-bottom: 4rem; }
+  .work-section { margin-bottom: 5rem; }
+  .section-header { margin-bottom: 1.5rem; }
+  .section-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .images-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .side-by-side-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .side-col { display: flex; flex-direction: column; gap: 1rem; }
+  .image-wrap { overflow: hidden; border-radius: 4px; background: #e8e6e0; }
+  .image-wrap img { width: 100%; height: auto; display: block; transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .image-wrap:hover img { transform: scale(1.02); }
+  .project-nav { display: flex; justify-content: space-between; align-items: center; padding-top: 3rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+  .project-nav-item { flex: 1; }
+  .project-nav-item:last-child { text-align: right; }
+  .nav-project { display: inline-flex; flex-direction: column; gap: 0.3rem; transition: opacity 0.2s; }
+  .nav-project:hover { opacity: 0.6; }
+  .nav-direction { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .nav-title { font-size: 1.1rem; font-weight: 500; letter-spacing: -0.01em; }
+  @media (max-width: 768px) {
+    .project-header { flex-direction: column; }
+    .project-tags { justify-content: flex-start; max-width: 100%; }
+    .overview { grid-template-columns: 1fr; gap: 0.75rem; }
+    .side-by-side-grid { grid-template-columns: 1fr; }
+  }
+</style>
