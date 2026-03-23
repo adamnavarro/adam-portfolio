@@ -49,7 +49,7 @@ const project = {
     },
   ],
   prev: { title: "GetX", slug: "getx" },
-  next: null
+  next: { title: "Central", slug: "central" }
 };
 ---
 
@@ -115,7 +115,14 @@ const project = {
             </a>
           )}
         </div>
-        <div class="project-nav-item"></div>
+        <div class="project-nav-item">
+          {project.next && (
+            <a href={`/work/${project.next.slug}`} class="nav-project">
+              <span class="nav-direction">Next →</span>
+              <span class="nav-title">{project.next.title}</span>
+            </a>
+          )}
+        </div>
       </nav>
     </div>
   </main>
